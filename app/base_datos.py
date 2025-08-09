@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SQLITE = {
@@ -19,6 +19,6 @@ POSTGRES = {
         'USER': 'postgres',
         'PASSWORD': '0987',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5432'
     }
 }
