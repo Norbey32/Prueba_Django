@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import app.base_datos as crm
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,7 +13,7 @@ SQLITE = {
 }
 
 
-POSTGRES = {
+POSTGRESQL = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'crm',

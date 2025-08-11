@@ -18,6 +18,7 @@ class Customer(models.Model):
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
+        crm_table = "Cliente"
         ordering = ["id"]
 
 class Category(models.Model):
@@ -29,6 +30,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
+        crm_table = "Categoria"
         ordering = ["id"]
 
 class Product(models.Model):
@@ -44,6 +46,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
+        crm_table = "Producto"
         ordering = ["id"]
 
 class Sale(models.Model):
@@ -59,6 +62,7 @@ class Sale(models.Model):
     class Meta:
         verbose_name = "Venta"
         verbose_name_plural = "Ventas"
+        crm_table = "Venta"
         ordering = ["id"]
 
 class SaleDate(models.Model):
@@ -74,4 +78,5 @@ class SaleDate(models.Model):
     class Meta:
         verbose_name = "Detalle de Venta"
         verbose_name_plural = "Detalles de Venta"
+        crm_table = "DetalleVenta"
         ordering = ["id"]
