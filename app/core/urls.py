@@ -1,8 +1,9 @@
 
 from django.urls import path
-from app.core.views import home
+from app.core.views import Category_list
+from app.core import views
+
 
 urlpatterns = [
-    path('uno', home),
-    path('dos', home)
+    path('uno/', Category_list),
 ]
