@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from app.core.models import Category
+
 
 # Create your views here.
 
@@ -10,6 +11,6 @@ def Category_list(request):
         'title': 'Listado de Categorías',
         'categories': Category.objects.all(),
     }
-    return render(request, 'index.html', data)
+    return render(request, 'category/list.html', data)
 
 
