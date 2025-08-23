@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'lib/DataTables/datatables.min.css' %}">
+{% endblock %}
+
+{% block content %}
+   <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-search"></i>
+                {{ title }}
+            </h3>
+        </div>
+        <div calss="card-body">
+            <table class="table" id=data>
+                <thead>
+                    {% block columns %}
+                    {% endblock %}
+                </thead>
+                <tbody>
+                    {% block rows %}
+                    {% endblock %}
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-flat btnTest">
+                <i class="fas fa-plusg"></i> Nuevo Registro
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'lib/DataTables/datatables.min.js' %}"></script>
+    <script>
+        $(function () {
+            $('#data').DataTable({
+                responsive: true,
+                autoWidth: false
+            });
+
+            $('.btnTest').on('click', function(){
+                $.ajax({
+                    url: '{% url 'core:CategoryListView'%}',
+                    type: 'POST',
+                    data: {id: 2},
+                    dataType: 'json'
+                }).done(function(data){
+                    console.log(data);
+                }).fail(function(data){
+                    alert('Error')
+                }).always(function(data){
+                })
+            });
+        })
+    </script>
+{% endblock %}
+    
+
